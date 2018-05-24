@@ -18,8 +18,9 @@ namespace TechJobs.Controllers
         public IActionResult Results(string searchType, string searchTerm)
         {
             List<Dictionary<string, string>> searchResults = JobData.FindByColumnAndValue(searchType, searchTerm);
-            
-            return View(searchResults);
+
+            return View("Views/Search/Index.cshtml", ListController.columnChoices);
+
         }
     }
 }

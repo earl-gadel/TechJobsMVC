@@ -34,3 +34,11 @@
 
     // TODO #2 - Loop over jobs dictionary and display all job fields 
 }
+
+@if (ViewBag.searchResults != null)
+{
+    @foreach (KeyValuePair<string, string> result in ViewBag.searchResults)
+    {
+        <p>@ViewBag.searchResults.Key @ViewBag.searchResults.Value</p>
+    }   
+}
