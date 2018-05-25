@@ -19,9 +19,13 @@ namespace TechJobs.Controllers
 
         public IActionResult Results(string searchType, string searchTerm)
         {
-            if (searchType == "all")
+            if (searchType == "all" && searchTerm != null)
             {
                 ViewBag.jobs = JobData.FindByValue(searchTerm);
+            }
+            else if (searchType == "all" && searchTerm == null)
+            {
+                ViewBag.jobs = JobData.FindAll();
             }
             else
             {
